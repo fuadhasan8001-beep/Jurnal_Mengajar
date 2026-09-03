@@ -72,8 +72,39 @@ CREATE TABLE `jurnal_mengajar` (
   `materi` varchar(200) DEFAULT NULL,
   `jumlah_hadir` int(11) DEFAULT 0,
   `jumlah_tidak_hadir` int(11) DEFAULT 0,
+  `jumlah_sakit` int(11) DEFAULT 0,
+  `jumlah_izin` int(11) DEFAULT 0,
+  `jumlah_alpa` int(11) DEFAULT 0,
   `status_kehadiran_guru` enum('Hadir','Izin','Sakit','Tanpa Keterangan') DEFAULT 'Hadir',
+  `tugas` varchar(255) DEFAULT NULL,
+  `guru_pengganti` varchar(100) DEFAULT NULL,
+  `status_jurnal` enum('Menunggu','Disetujui','Ditolak') DEFAULT 'Menunggu',
   `catatan` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+-- Konfigurasi jam pelajaran yang dikelola admin kurikulum
+--
+CREATE TABLE `jam_pelajaran` (
+  `id_jam` int(11) NOT NULL AUTO_INCREMENT,
+  `jam_ke` int(11) NOT NULL,
+  `waktu_mulai` time NOT NULL,
+  `waktu_selesai` time NOT NULL,
+  PRIMARY KEY (`id_jam`),
+  UNIQUE KEY `jam_ke` (`jam_ke`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO `jam_pelajaran` (`jam_ke`, `waktu_mulai`, `waktu_selesai`) VALUES
+(1, '07:00:00', '07:45:00'), (2, '07:45:00', '08:30:00'),
+(3, '08:30:00', '09:15:00'), (4, '09:15:00', '10:00:00'),
+(5, '10:15:00', '11:00:00'), (6, '11:00:00', '11:45:00'),
+(7, '11:45:00', '12:30:00'), (8, '13:00:00', '13:45:00');
+
+CREATE TABLE `akun_pengguna` (
+  `id_akun` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `role` enum('admin_kurikulum','guru','sekretaris','petugas_piket') NOT NULL,
+  PRIMARY KEY (`id_akun`), UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

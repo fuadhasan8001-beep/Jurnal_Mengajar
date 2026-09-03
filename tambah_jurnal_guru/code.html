@@ -235,6 +235,12 @@
 <div>
 <h3 class="text-title-lg font-title-lg text-on-background mb-stack-md border-b border-[#E2E8F0] pb-2">Informasi Pembelajaran</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="guru">Nama Guru</label>
+<select class="w-full bg-white border border-[#E2E8F0] rounded p-2 text-body-md" id="guru" name="guru" required>
+<option value="" selected disabled>Pilih Guru</option><option>Sutrisno, S.Kom</option><option>Rahmawati, S.Kom</option><option>Yusuf Hidayat, S.Kom</option><option>Dewi Anjani, S.Pd</option><option>Bambang Wijaya, S.Pd</option><option>Siti Nurhaliza, S.Pd</option>
+</select>
+</div>
 <!-- Tanggal -->
 <div class="space-y-unit">
 <label class="block text-label-md font-label-md text-[#172033]" for="tanggal">Tanggal</label>
@@ -283,6 +289,12 @@
 </div>
 <!-- Tugas -->
 <div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="status_guru">Status Kehadiran Guru</label>
+<select class="w-full bg-white border border-[#E2E8F0] rounded p-2 text-body-md" id="status_guru" name="status_guru">
+<option value="Hadir" selected>Hadir</option><option value="Izin">Izin</option><option value="Sakit">Sakit</option><option value="Tanpa Keterangan">Tanpa Keterangan</option>
+</select>
+</div>
+<div class="space-y-unit">
 <label class="block text-label-md font-label-md text-[#172033]" for="tugas">Tugas yang Diberikan (Opsional)</label>
 <input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="tugas" placeholder="Detail tugas..." type="text"/>
 </div>
@@ -291,6 +303,12 @@
 <!-- Section: Kehadiran -->
 <div>
 <h3 class="text-title-lg font-title-lg text-on-background mb-stack-md border-b border-[#E2E8F0] pb-2">Kehadiran Siswa</h3>
+<div class="space-y-unit mb-stack-md">
+<label class="block text-label-md font-label-md text-[#172033]" for="status_siswa">Status Kehadiran</label>
+<select class="w-full bg-white border border-[#E2E8F0] rounded p-2 text-body-md" id="status_siswa" name="status_siswa">
+<option value="Hadir" selected>Hadir semua</option><option value="Sakit">Ada siswa sakit</option><option value="Izin">Ada siswa izin</option><option value="Alpa">Ada siswa alpa</option>
+</select>
+</div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-stack-md">
 <!-- Hadir -->
 <div class="space-y-unit">
@@ -322,7 +340,7 @@
 <!-- Actions -->
 <div class="flex justify-end gap-3 pt-stack-md border-t border-[#E2E8F0]">
 <button class="px-4 py-2 border border-[#2563EB] text-[#2563EB] rounded text-label-md font-label-md hover:bg-surface-container-low transition-colors" type="button">Batal</button>
-<button class="px-4 py-2 bg-[#2563EB] text-white rounded text-label-md font-label-md hover:bg-primary transition-colors shadow-sm" type="submit">Simpan Jurnal</button>
+<button class="px-4 py-2 bg-[#2563EB] text-white rounded text-label-md font-label-md hover:bg-primary transition-colors shadow-sm" type="submit">Konfirmasi Jurnal</button>
 </div>
 </form>
 </div>

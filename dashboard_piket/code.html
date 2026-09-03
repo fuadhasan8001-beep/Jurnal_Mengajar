@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rekap Piket - Jurnal Mengajar</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+<header class="bg-emerald-800 text-white px-6 py-5"><div class="max-w-6xl mx-auto flex flex-wrap gap-4 items-center justify-between"><div><p class="text-emerald-200 text-sm">Jurnal Mengajar</p><h1 class="text-2xl font-bold">Rekap Kehadiran Guru</h1></div><a href="../index.html" class="rounded-lg border border-emerald-300 px-4 py-2 hover:bg-emerald-700">Keluar</a></div></header>
+<main class="max-w-6xl mx-auto p-6"><section class="bg-white rounded-xl shadow-sm p-5 mb-6"><div class="flex flex-wrap gap-4 items-end justify-between"><div><h2 class="text-lg font-semibold">Kehadiran hari ini</h2><p class="text-sm text-slate-500">Pilih tanggal untuk melihat guru yang masuk dan tidak masuk.</p></div><label class="text-sm font-medium">Tanggal<input id="tanggal-piket" type="date" class="block mt-1 rounded-lg border-slate-300"></label></div></section><section class="bg-white rounded-xl shadow-sm overflow-hidden"><div class="overflow-x-auto"><table class="w-full text-left"><thead class="bg-slate-50"><tr><th class="p-3">Nama Guru</th><th class="p-3">Status</th><th class="p-3">Keterangan / Tugas</th></tr></thead><tbody id="rekap-piket"></tbody></table></div></section></main><script src="../app.js"></script>
+</body></html>
