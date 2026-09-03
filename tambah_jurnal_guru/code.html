@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tambah Jurnal Guru - Jurnal Mengajar</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#edf0ff",
+                    "surface-tint": "#0053db",
+                    "on-surface-variant": "#434655",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary-container": "#3e5980",
+                    "outline-variant": "#c3c6d7",
+                    "secondary": "#455f87",
+                    "primary": "#004ac6",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-dim": "#cbdbf5",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed-dim": "#adc8f5",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#b5d0fd",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "secondary-fixed": "#d5e3ff",
+                    "surface-container-high": "#dce9ff",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9ff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "tertiary": "#0051b1",
+                    "primary-container": "#2563eb",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-container": "#0f69dc",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "on-secondary-fixed-variant": "#2d486d",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#001c3b",
+                    "on-tertiary-fixed": "#001a42",
+                    "tertiary-fixed": "#d8e2ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#eeefff",
+                    "on-primary-fixed": "#00174b",
+                    "outline": "#737686",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar-width": "280px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "unit": "4px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                'sans': ['Poppins', 'sans-serif'],
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "title-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-sidebar-width bg-[#1E3A5F] shadow-md flex-col z-50 overflow-y-auto">
+<div class="p-6">
+<h1 class="text-headline-md font-headline-md font-bold text-on-primary">Jurnal Mengajar</h1>
+<p class="text-label-md font-label-md text-on-primary/70">Admin Portal</p>
+</div>
+<div class="flex-1 px-4 py-2 flex flex-col gap-2">
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<!-- Active -->
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-primary bg-white/10 text-on-primary font-bold rounded-r-lg opacity-100 scale-100 transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-label-md font-label-md">Jurnal Mengajar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="text-label-md font-label-md">Data Guru</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-md font-label-md">Data Siswa</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-md font-label-md">Rekapitulasi</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md font-label-md">Pengaturan</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-sidebar-width flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface docked full-width top-0 sticky z-40 border-b border-outline-variant shadow-sm h-16 flex justify-between items-center px-container-padding">
+<div class="flex items-center gap-6">
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex gap-6">
+<a class="text-on-surface-variant font-body-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Bantuan</a>
+<a class="text-on-surface-variant font-body-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Dokumentasi</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-container-padding">
+<!-- Page Header -->
+<div class="mb-stack-lg">
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span class="text-body-md font-body-md">/ Jurnal Mengajar / Tambah Jurnal</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-on-background">Tambah Jurnal Mengajar</h2>
+</div>
+<!-- Form Card -->
+<div class="bg-white border border-[#E2E8F0] shadow-[0px_2px_4px_rgba(23,32,51,0.04)] rounded-lg p-stack-lg">
+<form class="space-y-stack-lg">
+<!-- Section: Waktu & Pelajaran -->
+<div>
+<h3 class="text-title-lg font-title-lg text-on-background mb-stack-md border-b border-[#E2E8F0] pb-2">Informasi Pembelajaran</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Tanggal -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="tanggal">Tanggal</label>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="tanggal" name="tanggal" type="date"/>
+</div>
+<!-- Jam ke- -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="jam">Jam ke-</label>
+<div class="flex gap-2 items-center">
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="jam_mulai" placeholder="Mulai" type="number"/>
+<span class="text-on-surface-variant">-</span>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="jam_selesai" placeholder="Selesai" type="number"/>
+</div>
+</div>
+<!-- Kelas -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="kelas">Kelas</label>
+<select class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="kelas" name="kelas">
+<option disabled="" selected="" value="">Pilih Kelas</option>
+<option value="10a">X - A</option>
+<option value="10b">X - B</option>
+<option value="11a">XI - IPA 1</option>
+<option value="11b">XI - IPS 1</option>
+</select>
+</div>
+<!-- Mata Pelajaran -->
+<div class="space-y-unit md:col-span-2 lg:col-span-3">
+<label class="block text-label-md font-label-md text-[#172033]" for="mapel">Mata Pelajaran</label>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="mapel" placeholder="Contoh: Matematika Peminatan" type="text"/>
+</div>
+</div>
+</div>
+<!-- Section: Materi & Kegiatan -->
+<div>
+<h3 class="text-title-lg font-title-lg text-on-background mb-stack-md border-b border-[#E2E8F0] pb-2">Detail Kegiatan</h3>
+<div class="space-y-stack-md">
+<!-- Materi -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="materi">Materi Pokok / KD</label>
+<textarea class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="materi" placeholder="Masukkan materi yang diajarkan..." rows="2"></textarea>
+</div>
+<!-- Keterangan Kegiatan -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="kegiatan">Keterangan / Uraian Kegiatan</label>
+<textarea class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="kegiatan" placeholder="Deskripsikan kegiatan belajar mengajar (Diskusi / Ulangan / Presentasi / dll)..." rows="3"></textarea>
+</div>
+<!-- Tugas -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="tugas">Tugas yang Diberikan (Opsional)</label>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="tugas" placeholder="Detail tugas..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Section: Kehadiran -->
+<div>
+<h3 class="text-title-lg font-title-lg text-on-background mb-stack-md border-b border-[#E2E8F0] pb-2">Kehadiran Siswa</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-stack-md">
+<!-- Hadir -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="hadir">Hadir</label>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="hadir" min="0" placeholder="0" type="number"/>
+</div>
+<!-- Sakit (S) -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="sakit">Sakit (S)</label>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="sakit" min="0" placeholder="0" type="number"/>
+</div>
+<!-- Izin (I) -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="izin">Izin (I)</label>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="izin" min="0" placeholder="0" type="number"/>
+</div>
+<!-- Alpa (A) -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="alpa">Alpa (A)</label>
+<input class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="alpa" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<!-- Nama Tidak Hadir -->
+<div class="space-y-unit">
+<label class="block text-label-md font-label-md text-[#172033]" for="nama_tidak_hadir">Nama Siswa Tidak Hadir (S/I/A)</label>
+<textarea class="w-full bg-white border border-[#E2E8F0] rounded p-2 focus:ring-0 focus:border-primary focus:shadow-[0_0_0_2px_rgba(37,99,235,0.2)] text-body-md transition-all" id="nama_tidak_hadir" placeholder="Contoh: Budi (S), Ani (I)..." rows="2"></textarea>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex justify-end gap-3 pt-stack-md border-t border-[#E2E8F0]">
+<button class="px-4 py-2 border border-[#2563EB] text-[#2563EB] rounded text-label-md font-label-md hover:bg-surface-container-low transition-colors" type="button">Batal</button>
+<button class="px-4 py-2 bg-[#2563EB] text-white rounded text-label-md font-label-md hover:bg-primary transition-colors shadow-sm" type="submit">Simpan Jurnal</button>
+</div>
+</form>
+</div>
+</main>
+</div>
+</body><script src="../app.js"></script></html>

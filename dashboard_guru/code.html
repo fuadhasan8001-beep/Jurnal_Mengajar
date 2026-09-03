@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Guru - Jurnal Mengajar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#0b1c30",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#edf0ff",
+                      "surface-tint": "#0053db",
+                      "on-surface-variant": "#434655",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-low": "#eff4ff",
+                      "on-secondary-container": "#3e5980",
+                      "outline-variant": "#c3c6d7",
+                      "secondary": "#455f87",
+                      "primary": "#004ac6",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-dim": "#cbdbf5",
+                      "surface": "#f8f9ff",
+                      "secondary-fixed-dim": "#adc8f5",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#b5d0fd",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#d5e3ff",
+                      "surface-container-high": "#dce9ff",
+                      "error": "#ba1a1a",
+                      "background": "#f8f9ff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "tertiary": "#0051b1",
+                      "primary-container": "#2563eb",
+                      "inverse-surface": "#213145",
+                      "on-tertiary-fixed-variant": "#004395",
+                      "surface-variant": "#d3e4fe",
+                      "tertiary-container": "#0f69dc",
+                      "tertiary-fixed-dim": "#adc6ff",
+                      "on-secondary-fixed-variant": "#2d486d",
+                      "on-surface": "#0b1c30",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed": "#001c3b",
+                      "on-tertiary-fixed": "#001a42",
+                      "tertiary-fixed": "#d8e2ff",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#eeefff",
+                      "on-primary-fixed": "#00174b",
+                      "outline": "#737686",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      
+                      // Semantic overrides per guidance
+                      "brand-sidebar": "#1E3A5F",
+                      "brand-primary": "#2563EB",
+                      "brand-success-bg": "rgba(34, 197, 94, 0.1)",
+                      "brand-success-text": "#22C55E",
+                      "brand-warning-bg": "rgba(245, 158, 11, 0.1)",
+                      "brand-warning-text": "#F59E0B",
+                      "brand-danger-bg": "rgba(239, 68, 68, 0.1)",
+                      "brand-danger-text": "#EF4444",
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sidebar-width": "280px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "unit": "4px",
+                      "container-padding": "24px",
+                      "gutter": "16px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {},
+              "fontSize": {
+                      "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Ambient Shadows */
+        .shadow-level-1 { box-shadow: 0px 2px 4px rgba(23, 32, 51, 0.04); }
+        .shadow-level-2 { box-shadow: 0px 4px 12px rgba(23, 32, 51, 0.08); }
+        
+        /* Thin Frame Aesthetic */
+        .thin-frame {
+            border: 1px solid #E2E8F0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-sans antialiased overflow-x-hidden">
+<!-- JSON: SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-on-background shadow-md hidden md:flex flex-col overflow-y-auto z-50">
+<!-- Logo Area -->
+<div class="px-container-padding py-stack-lg border-b border-white/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary icon-filled" data-icon="school">school</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-on-primary">Jurnal Mengajar</h1>
+<p class="text-label-sm font-label-sm text-on-primary/70">Admin Portal</p>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 py-stack-md flex flex-col gap-1">
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-primary bg-white/10 text-on-primary font-bold transition-all opacity-100 scale-100" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-label-md font-label-md">Jurnal Mengajar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="text-label-md font-label-md">Data Guru</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-label-md font-label-md">Data Siswa</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-md font-label-md">Rekapitulasi</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-md font-label-md">Pengaturan</span>
+</a>
+</nav>
+<!-- User Profile Minimal -->
+<div class="mt-auto p-4 border-t border-white/10">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-label-md font-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="md:ml-sidebar-width min-h-screen flex flex-col">
+<!-- JSON: TopNavBar -->
+<header class="bg-surface sticky top-0 z-40 border-b border-outline-variant shadow-sm flex justify-between items-center h-16 px-container-padding">
+<!-- Left: Search/Brand (Mobile) -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-container-low rounded-full px-4 py-2 thin-frame focus-within:border-brand-primary focus-within:ring-2 focus-within:ring-brand-primary/20 transition-all">
+<span class="material-symbols-outlined text-outline text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-64 p-0 placeholder:text-outline text-on-surface" placeholder="Cari..." type="text"/>
+</div>
+</div>
+<!-- Right: Actions & Profile -->
+<div class="flex items-center gap-6">
+<!-- Navigation Links -->
+<div class="hidden lg:flex items-center gap-4">
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-1.5 rounded-md text-label-md font-label-md" href="#">Bantuan</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-3 py-1.5 rounded-md text-label-md font-label-md" href="#">Dokumentasi</a>
+</div>
+<!-- Trailing Primary Action -->
+<button class="hidden sm:flex bg-primary-container text-on-primary px-4 py-2 rounded-md items-center gap-2 text-label-md font-label-md hover:shadow-level-2 transition-shadow shadow-level-1">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    Tambah Jurnal
+                </button>
+<div class="w-px h-6 bg-outline-variant mx-2"></div>
+<!-- Icons -->
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<img alt="User Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small, circular profile picture of an Indonesian male teacher in a professional setting, well-lit, looking approachable. Clean, bright background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAgrWxd1Z7QE8RAvrzKQKs7FHW1nR1tH9zETs9YJem-biBOhnnDWaqhqOomMYDYjubYLl9aqvKdEJqrNjrYYAHap8jmEby522Y3xuT6b9Wvk8DvgbnI7LdKUzCETg_LrniTTi_xhK1dPrCMGWpmSYvaqExNa-beJYThxIfoLwoOQUHBfAkqxWJxdkmiuzkXzreJ2VNaklBfy57jZ1QrWlIhoAg1T0IO8xdMVbzpbdDbgsCKyh33tPC"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 p-container-padding">
+<!-- Header Section -->
+<div class="mb-stack-lg flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex text-body-md font-body-md text-outline mb-2">
+<ol class="inline-flex items-center space-x-1 md:space-x-2">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center hover:text-primary transition-colors" href="#">Home</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<span class="text-on-surface-variant font-medium">Dashboard</span>
+</div>
+</li>
+</ol>
+</nav>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Dashboard Guru</h2>
+</div>
+<button class="sm:hidden w-full bg-primary-container text-on-primary px-4 py-3 rounded-md items-center justify-center gap-2 text-label-md font-label-md shadow-level-1 flex">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Tambah Jurnal
+                </button>
+</div>
+<!-- Dashboard Stats Grid (Bento style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-stack-lg">
+<!-- Card 1 -->
+<div class="bg-surface rounded-lg p-4 thin-frame shadow-level-1 hover:shadow-level-2 transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Jurnal Hari Ini</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">today</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-on-surface">2</span>
+<span class="text-body-md font-body-md text-outline">entri</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-lg p-4 thin-frame shadow-level-1 hover:shadow-level-2 transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Jurnal Minggu Ini</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">date_range</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-on-surface">14</span>
+<span class="text-body-md font-body-md text-outline">entri</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-lg p-4 thin-frame shadow-level-1 hover:shadow-level-2 transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Jurnal Bulan Ini</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-on-surface">42</span>
+<span class="text-body-md font-body-md text-outline">entri</span>
+</div>
+</div>
+<!-- Card 4 (Warning) -->
+<div class="bg-surface rounded-lg p-4 thin-frame shadow-level-1 hover:shadow-level-2 transition-shadow flex flex-col justify-between border-l-4 border-l-[#F59E0B]">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-md font-label-md text-on-surface-variant">Belum Diverifikasi</span>
+<div class="w-8 h-8 rounded-full bg-[rgba(245,158,11,0.1)] flex items-center justify-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-sm">pending_actions</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-[#F59E0B]">3</span>
+<span class="text-body-md font-body-md text-outline">menunggu</span>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-surface rounded-lg thin-frame shadow-level-1 overflow-hidden">
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<h3 class="text-title-lg font-title-lg text-on-surface">Jurnal Terbaru</h3>
+<button class="text-primary text-label-md font-label-md hover:underline flex items-center gap-1">
+                        Lihat Semua <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background border-b border-outline-variant">
+<th class="p-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Tanggal</th>
+<th class="p-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Kelas</th>
+<th class="p-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Mata Pelajaran</th>
+<th class="p-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Materi</th>
+<th class="p-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="p-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md text-on-surface divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="p-4 whitespace-nowrap">24 Okt 2023</td>
+<td class="p-4">X MIPA 1</td>
+<td class="p-4 font-medium">Matematika Wajib</td>
+<td class="p-4 max-w-xs truncate text-on-surface-variant">Fungsi Komposisi &amp; Invers (Pendahuluan)</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-[rgba(245,158,11,0.1)] text-[#F59E0B]">
+                                        Menunggu
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<button aria-label="Edit" class="text-outline hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="p-4 whitespace-nowrap">23 Okt 2023</td>
+<td class="p-4">XI IPS 2</td>
+<td class="p-4 font-medium">Sejarah Indonesia</td>
+<td class="p-4 max-w-xs truncate text-on-surface-variant">Pergerakan Nasional (Budi Utomo)</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-[rgba(34,197,94,0.1)] text-[#22C55E]">
+                                        Disetujui
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<button aria-label="View" class="text-outline hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="p-4 whitespace-nowrap">20 Okt 2023</td>
+<td class="p-4">XII MIPA 3</td>
+<td class="p-4 font-medium">Fisika</td>
+<td class="p-4 max-w-xs truncate text-on-surface-variant">Hukum Ohm - Praktikum dibatalkan karena listrik padam</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-[rgba(239,68,68,0.1)] text-[#EF4444]">
+                                        Ditolak
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<button aria-label="Edit" class="text-outline hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="p-4 whitespace-nowrap">19 Okt 2023</td>
+<td class="p-4">X MIPA 1</td>
+<td class="p-4 font-medium">Matematika Wajib</td>
+<td class="p-4 max-w-xs truncate text-on-surface-variant">Latihan Soal Fungsi Linear</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-[rgba(34,197,94,0.1)] text-[#22C55E]">
+                                        Disetujui
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<button aria-label="View" class="text-outline hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination minimal -->
+<div class="p-4 border-t border-outline-variant bg-background flex items-center justify-between">
+<span class="text-body-md font-body-md text-outline">Menampilkan 1-4 dari 42 jurnal</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded flex items-center justify-center thin-frame text-outline hover:bg-surface transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center thin-frame text-on-surface hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body><script src="../app.js"></script></html>

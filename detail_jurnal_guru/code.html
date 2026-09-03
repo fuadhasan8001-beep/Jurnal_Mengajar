@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Jurnal Guru - Jurnal Mengajar</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidelines -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#edf0ff",
+                    "surface-tint": "#0053db",
+                    "on-surface-variant": "#434655",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary-container": "#3e5980",
+                    "outline-variant": "#c3c6d7",
+                    "secondary": "#455f87",
+                    "primary": "#004ac6",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-dim": "#cbdbf5",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed-dim": "#adc8f5",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#b5d0fd",
+                    "surface-container": "#e5eeff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "secondary-fixed": "#d5e3ff",
+                    "surface-container-high": "#dce9ff",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9ff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#d3e4fe",
+                    "tertiary": "#0051b1",
+                    "primary-container": "#2563eb",
+                    "inverse-surface": "#213145",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-container": "#0f69dc",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "on-secondary-fixed-variant": "#2d486d",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#001c3b",
+                    "on-tertiary-fixed": "#001a42",
+                    "tertiary-fixed": "#d8e2ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#eeefff",
+                    "on-primary-fixed": "#00174b",
+                    "outline": "#737686",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar-width": "280px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "unit": "4px",
+                    "container-padding": "24px",
+                    "gutter": "16px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {},
+            "fontSize": {
+                    "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* CSS to support specific hex colors from guidelines not in tailwind config */
+        .badge-warning {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #F59E0B;
+        }
+        .sidebar-bg {
+            background-color: #1E3A5F;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-sans antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width sidebar-bg text-on-primary shadow-md flex flex-col overflow-y-auto z-50 hidden md:flex">
+<!-- Brand / Header -->
+<div class="px-container-padding py-stack-lg border-b border-white/10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary" data-icon="school">school</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-on-primary">Jurnal Mengajar</h1>
+<p class="text-label-sm font-label-sm text-on-primary/70">Admin Portal</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 py-stack-md flex flex-col gap-1 px-2">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<!-- Jurnal Mengajar (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-primary bg-white/10 text-on-primary font-bold opacity-100 scale-100 transition-all rounded-r-lg rounded-l-none" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book" data-weight="fill">menu_book</span>
+<span class="text-label-md font-label-md">Jurnal Mengajar</span>
+</a>
+<!-- Data Guru (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="text-label-md font-label-md">Data Guru</span>
+</a>
+<!-- Data Siswa (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-label-md font-label-md">Data Siswa</span>
+</a>
+<!-- Rekapitulasi (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-md font-label-md">Rekapitulasi</span>
+</a>
+<!-- Pengaturan (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-md font-label-md">Pengaturan</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col h-full w-full md:ml-sidebar-width">
+<!-- TopNavBar -->
+<header class="bg-surface docked full-width top-0 sticky z-40 border-b border-outline-variant shadow-sm flex justify-between items-center h-16 px-container-padding">
+<!-- Left: Mobile Menu Toggle & Title -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="hidden">
+<span class="text-headline-md font-headline-md font-bold">Jurnal Mengajar Guru</span>
+</div>
+<!-- Nav Links (Desktop) -->
+<nav class="hidden md:flex gap-6 ml-4">
+<a class="text-on-surface-variant text-label-md font-label-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Bantuan</a>
+<a class="text-on-surface-variant text-label-md font-label-md hover:bg-surface-container-low transition-colors px-2 py-1 rounded" href="#">Dokumentasi</a>
+</nav>
+</div>
+<!-- Right: Actions & Profile -->
+<div class="flex items-center gap-4">
+<!-- Search (Implicit from JSON 'search_bar': 'on_left' but shifted right for better UX in standard top navs if no explicit search box requested in prompt. Let's keep it minimal) -->
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+<button class="bg-primary-container text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md font-medium hover:opacity-90 transition-opacity hidden md:block">
+                    Tambah Jurnal
+                </button>
+</div>
+</header>
+<!-- Main Scrollable Area -->
+<main class="flex-1 overflow-y-auto p-container-padding pb-24">
+<div class="max-w-6xl mx-auto space-y-stack-lg">
+<!-- Breadcrumbs & Header Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-outline mb-2 uppercase tracking-wide">
+<a class="hover:text-primary transition-colors" href="#">Jurnal Mengajar</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Detail Jurnal</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg text-on-background flex items-center gap-3">
+                            Detail Pembelajaran
+                            <span class="badge-warning text-label-sm font-label-sm px-3 py-1 rounded-full border border-[#F59E0B]/20 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="pending">pending</span>
+                                Menunggu Verifikasi
+                            </span>
+</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors bg-surface shadow-[0px_2px_4px_rgba(23,32,51,0.04)]">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+                            Kembali
+                        </button>
+</div>
+</div>
+<!-- Bento Grid Layout for Detail Card -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Top Left: General Info -->
+<div class="md:col-span-8 bg-surface border border-outline-variant rounded-xl p-stack-lg shadow-[0px_2px_4px_rgba(23,32,51,0.04)] relative overflow-hidden">
+<!-- Decorative top accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-surface-tint"></div>
+<div class="flex items-start gap-4 mb-stack-md border-b border-outline-variant pb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+</div>
+<div>
+<h3 class="text-title-lg font-title-lg text-on-background">Budi Santoso, S.Pd, M.Kom</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Guru Mata Pelajaran</p>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-stack-md">
+<div>
+<p class="text-label-sm font-label-sm text-outline mb-1 uppercase">Mata Pelajaran</p>
+<p class="text-body-lg font-body-lg text-on-background font-medium">Matematika Lanjut</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline mb-1 uppercase">Kelas</p>
+<p class="text-body-lg font-body-lg text-on-background font-medium">XI IPA 1</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline mb-1 uppercase">Tanggal</p>
+<p class="text-body-lg font-body-lg text-on-background font-medium">12 Oktober 2023</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline mb-1 uppercase">Jam Ke-</p>
+<p class="text-body-lg font-body-lg text-on-background font-medium">3 - 4 (08:30 - 10:00)</p>
+</div>
+</div>
+</div>
+<!-- Top Right: Attendance Summary -->
+<div class="md:col-span-4 bg-surface border border-outline-variant rounded-xl p-stack-lg shadow-[0px_2px_4px_rgba(23,32,51,0.04)] flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-surface-container rounded-full opacity-50"></div>
+<h4 class="text-title-lg font-title-lg text-on-background mb-stack-md flex items-center gap-2 relative z-10">
+<span class="material-symbols-outlined text-primary" data-icon="group">group</span>
+                            Kehadiran
+                        </h4>
+<div class="flex items-center justify-between bg-surface-container-low p-4 rounded-lg mb-2 relative z-10">
+<span class="text-body-md font-body-md text-on-surface-variant">Jumlah Hadir</span>
+<span class="text-headline-md font-headline-md text-on-background">34 <span class="text-label-sm font-label-sm text-outline font-normal">Siswa</span></span>
+</div>
+<div class="flex items-center justify-between bg-error-container/30 p-4 rounded-lg relative z-10">
+<span class="text-body-md font-body-md text-on-error-container font-medium">Tidak Hadir</span>
+<span class="text-headline-md font-headline-md text-on-error-container">2 <span class="text-label-sm font-label-sm opacity-70 font-normal">Siswa</span></span>
+</div>
+</div>
+<!-- Content & Materi -->
+<div class="md:col-span-12 bg-surface border border-outline-variant rounded-xl shadow-[0px_2px_4px_rgba(23,32,51,0.04)] overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-outline-variant">
+<!-- Materi Section -->
+<div class="p-stack-lg">
+<h4 class="text-title-lg font-title-lg text-on-background mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="menu_book">menu_book</span>
+                                    Materi Pembelajaran
+                                </h4>
+<div class="prose prose-sm text-on-surface-variant max-w-none">
+<p class="text-body-lg font-body-lg mb-2 text-on-background font-medium">Trigonometri: Persamaan Trigonometri Dasar</p>
+<ul class="list-disc pl-5 space-y-1 text-body-md font-body-md">
+<li>Menjelaskan konsep persamaan trigonometri dasar (sin x = sin a, cos x = cos a, tan x = tan a).</li>
+<li>Menyelesaikan masalah yang berkaitan dengan persamaan trigonometri dalam interval tertentu.</li>
+<li>Latihan soal mandiri dari buku paket halaman 45.</li>
+</ul>
+</div>
+</div>
+<!-- Keterangan Section -->
+<div class="p-stack-lg">
+<h4 class="text-title-lg font-title-lg text-on-background mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+                                    Keterangan / Catatan
+                                </h4>
+<div class="bg-surface-container-low p-4 rounded-lg text-body-md font-body-md text-on-surface-variant min-h-[100px]">
+                                    Kegiatan belajar mengajar berjalan dengan lancar. Sebagian besar siswa sudah memahami konsep dasar, namun perlu pengulangan materi pada pertemuan berikutnya untuk penyelesaian soal-soal HOTS. Menggunakan proyektor untuk presentasi materi visual.
+                                </div>
+</div>
+</div>
+</div>
+<!-- Bottom Left: Absent Students List -->
+<div class="md:col-span-6 bg-surface border border-outline-variant rounded-xl p-stack-lg shadow-[0px_2px_4px_rgba(23,32,51,0.04)]">
+<h4 class="text-title-lg font-title-lg text-on-background mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-error" data-icon="person_off">person_off</span>
+                            Nama Siswa Tidak Hadir
+                        </h4>
+<div class="space-y-3">
+<!-- Student Item -->
+<div class="flex items-center justify-between p-3 border border-outline-variant rounded-lg hover:bg-surface-bright transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-sm font-label-sm text-on-surface-variant font-bold">
+                                        AD
+                                    </div>
+<div>
+<p class="text-label-md font-label-md text-on-background">Ahmad Daniswara</p>
+<p class="text-label-sm font-label-sm text-outline">NIS: 102938</p>
+</div>
+</div>
+<span class="bg-error-container text-on-error-container text-[11px] font-bold px-2 py-1 rounded uppercase tracking-wider">Sakit</span>
+</div>
+<!-- Student Item -->
+<div class="flex items-center justify-between p-3 border border-outline-variant rounded-lg hover:bg-surface-bright transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-label-sm font-label-sm text-on-surface-variant font-bold">
+                                        CF
+                                    </div>
+<div>
+<p class="text-label-md font-label-md text-on-background">Citra Fitriani</p>
+<p class="text-label-sm font-label-sm text-outline">NIS: 102945</p>
+</div>
+</div>
+<span class="bg-surface-dim text-on-surface-variant text-[11px] font-bold px-2 py-1 rounded uppercase tracking-wider">Izin</span>
+</div>
+</div>
+</div>
+<!-- Bottom Right: Assignments / Tasks -->
+<div class="md:col-span-6 bg-surface border border-outline-variant rounded-xl p-stack-lg shadow-[0px_2px_4px_rgba(23,32,51,0.04)]">
+<h4 class="text-title-lg font-title-lg text-on-background mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="assignment">assignment</span>
+                            Tugas &amp; Evaluasi
+                        </h4>
+<div class="space-y-4">
+<!-- Tugas Section -->
+<div>
+<p class="text-label-sm font-label-sm text-outline mb-2 uppercase">Tugas / PR</p>
+<div class="bg-surface-bright border border-outline-variant border-l-4 border-l-tertiary p-3 rounded-r-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5" data-icon="task">task</span>
+<div>
+<p class="text-body-md font-body-md text-on-background">Mengerjakan LKS Halaman 45-46, Bagian A dan B. Dikumpulkan pada pertemuan selanjutnya.</p>
+</div>
+</div>
+</div>
+<!-- Diskusi/Ulangan Section -->
+<div>
+<p class="text-label-sm font-label-sm text-outline mb-2 uppercase">Diskusi / Ulangan</p>
+<div class="bg-surface-bright border border-outline-variant p-3 rounded-lg flex items-start gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] mt-0.5" data-icon="forum">forum</span>
+<p class="text-body-md font-body-md">Sesi diskusi kelompok (4 orang) membahas penyelesaian soal cerita aplikatif selama 20 menit di akhir jam pelajaran.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body><script src="../app.js"></script></html>

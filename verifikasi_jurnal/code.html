@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verifikasi Jurnal - Jurnal Mengajar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#edf0ff",
+                        "surface-tint": "#0053db",
+                        "on-surface-variant": "#434655",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#3e5980",
+                        "outline-variant": "#c3c6d7",
+                        "secondary": "#455f87",
+                        "primary": "#004ac6",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed-dim": "#adc8f5",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#b5d0fd",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-fixed": "#d5e3ff",
+                        "surface-container-high": "#dce9ff",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9ff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary": "#0051b1",
+                        "primary-container": "#2563eb",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-container": "#0f69dc",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-secondary-fixed-variant": "#2d486d",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#001c3b",
+                        "on-tertiary-fixed": "#001a42",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed": "#00174b",
+                        "outline": "#737686",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sidebar-width": "280px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "unit": "4px",
+                        "container-padding": "24px",
+                        "gutter": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {},
+                    "fontSize": {
+                        "display-lg": [
+                            "36px",
+                            {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "title-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-lg": [
+                            "28px",
+                            {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-lg": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-md": [
+                            "20px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "label-md": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "24px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; color: #172033; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-filled { font-variation-settings: 'FILL' 1; }
+        
+        /* Subtle Depth */
+        .level-1 { background-color: #ffffff; box-shadow: 0px 2px 4px rgba(23, 32, 51, 0.04); border: 1px solid #E2E8F0; }
+        .level-2 { background-color: #ffffff; box-shadow: 0px 4px 12px rgba(23, 32, 51, 0.08); border: 1px solid #E2E8F0; }
+        
+        /* Thin Frame Input */
+        .input-thin { border: 1px solid #E2E8F0; transition: all 0.2s; }
+        .input-thin:focus { border-color: #2563EB; box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2); outline: none; }
+    </style>
+</head>
+<body class="flex bg-background font-sans antialiased h-screen overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col h-full overflow-y-auto fixed left-0 top-0 w-sidebar-width bg-on-background dark:bg-on-background shadow-md z-50">
+<!-- Brand / Header -->
+<div class="flex items-center gap-4 px-container-padding py-stack-lg border-b border-white/10">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">menu_book</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-on-primary">Jurnal Mengajar</h1>
+<p class="text-label-sm font-label-sm text-on-primary/70">Admin Portal</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col py-stack-md flex-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-primary bg-white/10 text-on-primary font-bold opacity-100 scale-100 transition-all hover:bg-white/5 duration-200" href="#">
+<span class="material-symbols-outlined icon-filled text-primary-fixed">menu_book</span>
+<span class="text-label-md font-label-md">Jurnal Mengajar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span class="text-label-md font-label-md">Data Guru</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-md font-label-md">Data Siswa</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-md font-label-md">Rekapitulasi</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200 mt-auto border-t border-white/10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md font-label-md">Pengaturan</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-0 md:ml-sidebar-width flex flex-col h-full overflow-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center h-16 px-container-padding bg-surface border-b border-outline-variant shadow-sm docked full-width top-0 sticky z-40">
+<!-- Mobile Menu Toggle & Title -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex text-headline-md font-headline-md text-primary font-bold border-b-2 border-primary pb-1">Jurnal Mengajar Guru</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-4">
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bantuan</a>
+<a class="text-body-md font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dokumentasi</a>
+</div>
+<div class="h-6 w-px bg-outline-variant hidden md:block"></div>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="ml-2 bg-primary-container text-on-primary px-4 py-2 rounded-lg text-label-md font-label-md hover:opacity-90 transition-opacity hidden sm:block">
+                        Tambah Jurnal
+                    </button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto p-4 md:p-container-padding">
+<!-- Breadcrumbs & Header -->
+<div class="mb-stack-lg">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant mb-2">
+<a class="hover:text-primary" href="#">Jurnal Mengajar</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Daftar Jurnal</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface">Verifikasi Jurnal</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-headline-lg font-headline-lg md:text-display-lg md:font-display-lg text-on-surface">Verifikasi Jurnal</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Tinjau dan verifikasi laporan kegiatan belajar mengajar.</p>
+</div>
+<button class="text-secondary border border-secondary px-4 py-2 rounded-lg text-label-md font-label-md hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Kembali
+                    </button>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Journal Detail -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<div class="level-1 rounded-xl p-6 h-full">
+<div class="flex justify-between items-start mb-6 pb-6 border-b border-outline-variant">
+<div>
+<h3 class="text-title-lg font-title-lg text-on-surface mb-2">Matematika Wajib - Kelas XI IPA 1</h3>
+<div class="flex flex-wrap items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                        12 Okt 2023
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                        07:15 - 08:45 (Jam ke 1-2)
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                                        Budi Santoso, S.Pd
+                                    </div>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-[#F59E0B]/10 text-[#F59E0B] text-label-sm font-label-sm font-bold border border-[#F59E0B]/20">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+                                Menunggu Verifikasi
+                            </span>
+</div>
+<div class="space-y-6">
+<!-- Kompetensi Dasar & Materi -->
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Materi Pokok &amp; Kompetensi Dasar</h4>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant">
+<p class="text-body-md font-body-md font-medium text-on-surface mb-1">KD 3.1 - Matriks dan Operasinya</p>
+<p class="text-body-md font-body-md text-on-surface-variant">Menjelaskan matriks dan kesamaan matriks dengan menggunakan masalah kontekstual dan melakukan operasi pada matriks yang meliputi penjumlahan, pengurangan, perkalian skalar, dan perkalian, serta transpose.</p>
+</div>
+</div>
+<!-- Kegiatan Pembelajaran -->
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Kegiatan Pembelajaran</h4>
+<div class="text-body-md font-body-md text-on-surface space-y-2">
+<p>1. Pendahuluan: Berdoa, presensi, dan apersepsi mengenai sistem persamaan linear.</p>
+<p>2. Inti: Penjelasan konsep dasar matriks, ordo, dan elemen matriks. Diskusi kelompok menyelesaikan LKS tentang operasi penjumlahan dan pengurangan matriks.</p>
+<p>3. Penutup: Kesimpulan, penugasan individu untuk PR, dan doa penutup.</p>
+</div>
+</div>
+<!-- Catatan Guru & Media -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Media/Alat</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest rounded text-label-sm text-on-surface">Proyektor LCD</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-label-sm text-on-surface">Modul Matematika</span>
+<span class="px-2 py-1 bg-surface-container-highest rounded text-label-sm text-on-surface">Papan Tulis</span>
+</div>
+</div>
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Catatan Khusus Guru</h4>
+<p class="text-body-md font-body-md text-on-surface-variant italic">
+                                        Sebagian besar siswa sudah memahami konsep ordo matriks, namun masih ada beberapa yang bingung saat mengoperasikan penjumlahan matriks beda ordo. Akan diulang sekilas pertemuan depan.
+                                    </p>
+</div>
+</div>
+<!-- Absensi Ringkasan -->
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-3">Kehadiran Siswa</h4>
+<div class="grid grid-cols-4 gap-2">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant text-center">
+<div class="text-title-lg font-title-lg text-primary">32</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant">Hadir</div>
+</div>
+<div class="bg-[#F59E0B]/5 p-3 rounded-lg border border-[#F59E0B]/20 text-center">
+<div class="text-title-lg font-title-lg text-[#F59E0B]">2</div>
+<div class="text-label-sm font-label-sm text-[#F59E0B]">Sakit</div>
+</div>
+<div class="bg-[#2563EB]/5 p-3 rounded-lg border border-[#2563EB]/20 text-center">
+<div class="text-title-lg font-title-lg text-[#2563EB]">1</div>
+<div class="text-label-sm font-label-sm text-[#2563EB]">Izin</div>
+</div>
+<div class="bg-[#EF4444]/5 p-3 rounded-lg border border-[#EF4444]/20 text-center">
+<div class="text-title-lg font-title-lg text-[#EF4444]">0</div>
+<div class="text-label-sm font-label-sm text-[#EF4444]">Alpa</div>
+</div>
+</div>
+<div class="mt-2 text-label-sm text-on-surface-variant flex gap-4">
+<span>Sakit: Ahmad (DBD), Siti (Demam)</span>
+<span>Izin: Budi (Acara Keluarga)</span>
+</div>
+</div>
+<!-- Lampiran Bukti Foto -->
+<div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-3">Lampiran Dokumentasi</h4>
+<div class="flex gap-4">
+<div class="w-32 h-24 rounded-lg bg-surface-container-highest border border-outline-variant overflow-hidden relative group cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A brightly lit high school classroom with students sitting at wooden desks facing a white board. The teacher, an adult male in a neat batik shirt, is pointing at math equations on the board. The atmosphere is academic, focused, and structured. Natural light streams in through large windows on the left." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZNgcehwTcOpHk4qpn9o3SASD5dhLUrRvqRpiZRrPc3s9WgeHPltJpNHYMbWoi7zwpa5M2sfgOy0PgbFrETHSt6pP28PWPS04fYhJJ-1YUYyxbHqztnLpoi_C7j-fKsxnQcNRdtLojCLxgX9fVrqZdQq6xvIIzMRj82CoMQhN0_C72lMWXnciiOZzRpStAxjyNopXWMTy4bJoC_l2QyoPvl0exj-lwvW68RIt3pJiAwwiI7merK72i"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</div>
+<div class="w-32 h-24 rounded-lg bg-surface-container-highest border border-outline-variant overflow-hidden relative group cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A close up shot of a student's notebook filled with neat, handwritten matrix math problems and solutions in blue ink. The notebook rests on a wooden school desk. The lighting is soft and focused on the paper, indicating concentration and academic work in a modern educational setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZTZ9Oamc52gOreuHL4Nf4hPyl0_2iNS25BQBG1Oi3z1nJpkGUDolmJOmb_HHi6ziTU0KLT5J0fz9fq-q2PxdcvJrnZyWe9iySu7wz9064ObhjCZZ7EjDIKYuzOZFufaBceQJ5t1dYPhrW6QbMXgXBgWivB18ylnDUPevPhEypFu_wCqWLjn3SzLuUXjpAmCsUgRGoeutwEhPXzjmo7113safe1XNrfhAucN86tUC2sSY_hfjQLKvu"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Verification Action -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="level-2 rounded-xl p-6 sticky top-24">
+<div class="flex items-center gap-2 mb-4 pb-4 border-b border-outline-variant">
+<span class="material-symbols-outlined text-primary">fact_check</span>
+<h3 class="text-title-lg font-title-lg text-on-surface">Keputusan Verifikasi</h3>
+</div>
+<form class="space-y-6" id="verifikasi-form">
+<!-- Radio Buttons -->
+<div class="space-y-3">
+<label class="flex items-start p-4 rounded-lg border input-thin bg-surface cursor-pointer hover:bg-surface-container-low transition-colors" id="label-setuju">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary bg-white border-outline-variant focus:ring-primary focus:ring-2" name="keputusan" onchange="toggleCatatan()" type="radio" value="setuju"/>
+</div>
+<div class="ml-3 flex-1">
+<span class="block text-label-md font-label-md text-on-surface mb-1">Setujui Jurnal</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">Jurnal lengkap dan sesuai dengan kurikulum.</span>
+</div>
+<span class="material-symbols-outlined text-[#22C55E] ml-2 opacity-0 check-icon">check_circle</span>
+</label>
+<label class="flex items-start p-4 rounded-lg border input-thin bg-surface cursor-pointer hover:bg-error-container/20 transition-colors" id="label-tolak">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-error bg-white border-outline-variant focus:ring-error focus:ring-2" name="keputusan" onchange="toggleCatatan()" type="radio" value="tolak"/>
+</div>
+<div class="ml-3 flex-1">
+<span class="block text-label-md font-label-md text-on-surface mb-1">Tolak Jurnal / Revisi</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">Ada kekurangan data atau ketidaksesuaian.</span>
+</div>
+<span class="material-symbols-outlined text-error ml-2 opacity-0 error-icon">cancel</span>
+</label>
+</div>
+<!-- Catatan Penolakan (Hidden by default) -->
+<div class="hidden space-y-2 transition-all duration-300 opacity-0" id="catatan-container">
+<label class="block text-label-md font-label-md text-on-surface" for="catatan">
+                                    Catatan Penolakan <span class="text-error">*</span>
+</label>
+<textarea class="w-full rounded-lg input-thin bg-white p-3 text-body-md font-body-md text-on-surface placeholder:text-outline-variant" id="catatan" placeholder="Tuliskan alasan penolakan atau instruksi revisi untuk guru..." rows="4"></textarea>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Catatan ini akan dikirimkan kepada guru yang bersangkutan.</p>
+</div>
+<!-- Submit Button -->
+<div class="pt-4 border-t border-outline-variant mt-6">
+<button class="w-full bg-primary-container text-on-primary py-3 px-4 rounded-lg text-label-md font-label-md font-bold hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                                    Simpan Keputusan
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        function toggleCatatan() {
+            const setujuRadio = document.querySelector('input[value="setuju"]');
+            const tolakRadio = document.querySelector('input[value="tolak"]');
+            const catatanContainer = document.getElementById('catatan-container');
+            
+            const labelSetuju = document.getElementById('label-setuju');
+            const labelTolak = document.getElementById('label-tolak');
+            const checkIcon = labelSetuju.querySelector('.check-icon');
+            const errorIcon = labelTolak.querySelector('.error-icon');
+
+            // Reset styles
+            labelSetuju.classList.remove('border-[#22C55E]', 'bg-[#22C55E]/5');
+            labelTolak.classList.remove('border-error', 'bg-error-container/20');
+            checkIcon.classList.remove('opacity-100');
+            errorIcon.classList.remove('opacity-100');
+
+            if (tolakRadio.checked) {
+                catatanContainer.classList.remove('hidden');
+                setTimeout(() => {
+                    catatanContainer.classList.remove('opacity-0');
+                    catatanContainer.classList.add('opacity-100');
+                }, 50);
+                
+                labelTolak.classList.add('border-error', 'bg-error-container/20');
+                errorIcon.classList.add('opacity-100');
+                
+            } else {
+                catatanContainer.classList.remove('opacity-100');
+                catatanContainer.classList.add('opacity-0');
+                setTimeout(() => {
+                    catatanContainer.classList.add('hidden');
+                }, 300);
+                
+                labelSetuju.classList.add('border-[#22C55E]', 'bg-[#22C55E]/5');
+                checkIcon.classList.add('opacity-100');
+            }
+        }
+    </script>
+</body><script src="../app.js"></script></html>

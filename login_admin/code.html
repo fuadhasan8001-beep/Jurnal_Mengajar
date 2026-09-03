@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login Admin - Jurnal Mengajar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#edf0ff",
+                        "surface-tint": "#0053db",
+                        "on-surface-variant": "#434655",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#3e5980",
+                        "outline-variant": "#c3c6d7",
+                        "secondary": "#455f87",
+                        "primary": "#004ac6",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed-dim": "#adc8f5",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#b5d0fd",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-fixed": "#d5e3ff",
+                        "surface-container-high": "#dce9ff",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9ff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary": "#0051b1",
+                        "primary-container": "#2563eb",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-container": "#0f69dc",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-secondary-fixed-variant": "#2d486d",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#001c3b",
+                        "on-tertiary-fixed": "#001a42",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed": "#00174b",
+                        "outline": "#737686",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sidebar-width": "280px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "unit": "4px",
+                        "container-padding": "24px",
+                        "gutter": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "sans": ['Inter', 'sans-serif']
+                    },
+                    "fontSize": {
+                        "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center p-4">
+<!-- Transactional Intent: Suppressing Nav Shell (SideNavBar & TopNavBar) -->
+<main class="w-full max-w-[1000px] flex rounded-xl overflow-hidden shadow-[0_2px_4px_rgba(23,32,51,0.04)] bg-surface border border-outline-variant min-h-[600px]">
+<!-- Left Side: Image/Branding -->
+<div class="hidden md:block md:w-1/2 relative bg-surface-container-low">
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply z-10"></div>
+<img alt="Educational Admin Abstract Background" class="w-full h-full object-cover" data-alt="A modern, abstract digital illustration representing educational administration and data management. Geometric shapes in shades of deep blue, pristine white, and soft light blue intertwine, suggesting organized systems, networks, and seamless data flow. The lighting is soft and high-key, maintaining a professional, calm, and trustworthy corporate SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtkIXqvc_3ysfS7QOSVnZfyiaq_oFDicJN6IqENpnX6JrGs7bB5RBcerpdgRPMP2uwA8MK90NxTUtZmt2AxmMW_hMRUeZK1a_UDJokZPXY6Q5RYlkJnTQAvedPXRgk2xAEDZ0nIOu4QpPcP9e17013K_li1fbEjiB3UPa_RQ8kRRDT8sY5zGP8iIoSdQWyuMf2AFxY7uFeaUQKLOyQITXjt9DIDU9yF_CovXXRMUTkJHlmI856CNvK"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-between p-8 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[32px]">menu_book</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">Jurnal Mengajar</span>
+</div>
+<div>
+<h2 class="text-display-lg font-display-lg text-primary mb-4">Portal Admin</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-sm">
+                        Sistem manajemen pusat untuk mengawasi operasional pendidikan, memastikan kelancaran data, dan mengelola konfigurasi platform secara menyeluruh.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Right Side: Login Form -->
+<div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-surface">
+<div class="md:hidden flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-primary text-[28px]">menu_book</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">Jurnal Mengajar</span>
+</div>
+<div class="mb-8">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-2">Login Admin</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Kelola data dan pengaturan sistem.</p>
+</div>
+<form class="space-y-6 flex-grow flex flex-col justify-center">
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface" for="adminId">ID Admin / Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">shield_person</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface border border-outline-variant rounded-lg text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder-outline-variant" id="adminId" name="adminId" placeholder="Masukkan ID Admin atau Email" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-label-md font-label-md text-on-surface" for="password">Kata Sandi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-10 pr-10 py-3 bg-surface border border-outline-variant rounded-lg text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder-outline-variant" id="password" name="password" placeholder="Masukkan Kata Sandi" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md font-body-md text-on-surface-variant">Ingat saya</span>
+</label>
+<a class="text-label-md font-label-md text-primary hover:text-primary-container transition-colors" href="#">Lupa sandi?</a>
+</div>
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-lg text-label-md font-label-md font-semibold hover:bg-primary-container transition-colors shadow-sm hover:shadow-md flex justify-center items-center gap-2 mt-4" type="submit">
+<span>Masuk ke Dashboard</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant text-center">
+<p class="text-body-md font-body-md text-on-surface-variant">
+                    Bukan Admin? <a class="text-primary font-medium hover:underline" href="#">Kembali ke Portal Guru</a>
+</p>
+</div>
+</div>
+</main>
+</body><script src="../app.js"></script></html>

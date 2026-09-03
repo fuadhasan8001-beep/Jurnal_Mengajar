@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Sekretaris - Jurnal Mengajar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#0b1c30",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#edf0ff",
+                      "surface-tint": "#0053db",
+                      "on-surface-variant": "#434655",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-low": "#eff4ff",
+                      "on-secondary-container": "#3e5980",
+                      "outline-variant": "#c3c6d7",
+                      "secondary": "#455f87",
+                      "primary": "#004ac6",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-dim": "#cbdbf5",
+                      "surface": "#f8f9ff",
+                      "secondary-fixed-dim": "#adc8f5",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#b5d0fd",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#d5e3ff",
+                      "surface-container-high": "#dce9ff",
+                      "error": "#ba1a1a",
+                      "background": "#f8f9ff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "tertiary": "#0051b1",
+                      "primary-container": "#2563eb",
+                      "inverse-surface": "#213145",
+                      "on-tertiary-fixed-variant": "#004395",
+                      "surface-variant": "#d3e4fe",
+                      "tertiary-container": "#0f69dc",
+                      "tertiary-fixed-dim": "#adc6ff",
+                      "on-secondary-fixed-variant": "#2d486d",
+                      "on-surface": "#0b1c30",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed": "#001c3b",
+                      "on-tertiary-fixed": "#001a42",
+                      "tertiary-fixed": "#d8e2ff",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#eeefff",
+                      "on-primary-fixed": "#00174b",
+                      "outline": "#737686",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sidebar-width": "280px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "unit": "4px",
+                      "container-padding": "24px",
+                      "gutter": "16px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {},
+              "fontSize": {
+                      "display-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar (Adapted for Sekretaris context while preserving structural keys) -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-on-background shadow-md flex flex-col h-full overflow-y-auto z-50">
+<!-- Brand Header -->
+<div class="px-container-padding py-stack-lg border-b border-white/10 flex items-center gap-stack-sm">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-primary" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-on-primary">Jurnal Mengajar</h1>
+<p class="text-label-sm font-label-sm text-on-primary/70">Sekretaris Portal</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 py-stack-md flex flex-col gap-unit">
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-primary bg-white/10 text-on-primary font-bold opacity-100 scale-100 transition-all hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span class="text-label-md font-label-md">Verifikasi Jurnal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="text-label-md font-label-md">Jurnal Disetujui</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-label-md font-label-md">Riwayat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-md font-label-md">Rekapitulasi</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/70 hover:text-on-primary hover:bg-white/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-md font-label-md">Profil</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10 mt-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-error hover:text-error-container hover:bg-white/5 transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-label-md font-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-sidebar-width flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface shadow-sm docked full-width top-0 sticky z-40 border-b border-outline-variant flex justify-between items-center h-16 px-container-padding">
+<div class="flex items-center gap-4">
+<!-- Search bar logic (on_left) simulated -->
+<div class="relative hidden md:block w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-white border border-outline-variant rounded-lg pl-10 pr-4 py-2 text-body-md font-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow outline-none" placeholder="Cari jurnal..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="flex items-center gap-2 hover:bg-surface-container-low transition-colors p-1 pr-3 rounded-full border border-outline-variant">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small circular avatar of a professional administrator, bright studio lighting, neutral background, corporate SaaS style, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUhMEkfC-yEyCtRIpO8mf94vEXcCIIJ76dC9wyXnpTqZENMaDsVtU63m60Rhs9Qr9a19Vdh8IaqToA1afNDcA_QpDwQ6h3kctwrLYl6Y4379DgEXn1i8RHTkznN93NqHfdMP4tC8vLdSM9CW9muE8oL3713wK0q9ROEIUuxSW0B6OTjSe79Ch83XT8xjoHUBaJVMZzNTt4hPutz7YE1HRjPzeV6tFNqfvrr57hvEZljvYuHzzVj2_a"/>
+<span class="text-label-md font-label-md text-on-surface">Sekretaris</span>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 overflow-y-auto p-container-padding bg-surface-bright">
+<div class="mb-stack-lg flex justify-between items-end">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-unit">Dashboard Sekretaris</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Ringkasan status jurnal harian dari guru.</p>
+</div>
+<div class="text-label-sm font-label-sm text-outline flex items-center gap-1 bg-white px-3 py-1.5 rounded-lg border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_today">calendar_today</span>
+                    Kamis, 24 Okt 2023
+                </div>
+</div>
+<!-- Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-stack-lg">
+<!-- Metric 1 -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_2px_4px_rgba(23,32,51,0.04)] p-4 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(23,32,51,0.08)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="pending_actions">pending_actions</span>
+</div>
+<span class="bg-[#F59E0B]/10 text-[#F59E0B] px-2 py-1 rounded text-label-sm font-label-sm font-bold">Action Needed</span>
+</div>
+<div>
+<p class="text-display-lg font-display-lg text-on-background">12</p>
+<p class="text-label-md font-label-md text-on-surface-variant">Menunggu Verifikasi</p>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_2px_4px_rgba(23,32,51,0.04)] p-4 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(23,32,51,0.08)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-[#22C55E]/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#22C55E]" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div>
+<p class="text-display-lg font-display-lg text-on-background">48</p>
+<p class="text-label-md font-label-md text-on-surface-variant">Jurnal Disetujui</p>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_2px_4px_rgba(23,32,51,0.04)] p-4 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(23,32,51,0.08)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+</div>
+</div>
+<div>
+<p class="text-display-lg font-display-lg text-on-background">3</p>
+<p class="text-label-md font-label-md text-on-surface-variant">Jurnal Ditolak</p>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_2px_4px_rgba(23,32,51,0.04)] p-4 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(23,32,51,0.08)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="library_books">library_books</span>
+</div>
+</div>
+<div>
+<p class="text-display-lg font-display-lg text-on-background">63</p>
+<p class="text-label-md font-label-md text-on-surface-variant">Total Jurnal (Hari ini)</p>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_2px_4px_rgba(23,32,51,0.04)] overflow-hidden">
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface">
+<h3 class="text-title-lg font-title-lg text-on-background">Jurnal Menunggu Verifikasi</h3>
+<button class="text-label-md font-label-md text-primary hover:text-primary-container transition-colors flex items-center gap-1">
+                        Lihat Semua <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-bright border-b border-outline-variant">
+<th class="py-3 px-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Tanggal</th>
+<th class="py-3 px-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Guru</th>
+<th class="py-3 px-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Kelas</th>
+<th class="py-3 px-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Mata Pelajaran</th>
+<th class="py-3 px-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="py-3 px-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/50 hover:bg-surface-bright transition-colors">
+<td class="py-3 px-4 text-on-background">24 Okt, 08:00</td>
+<td class="py-3 px-4 text-on-background font-medium">Budi Santoso, S.Pd</td>
+<td class="py-3 px-4 text-on-surface-variant">X MIPA 1</td>
+<td class="py-3 px-4 text-on-surface-variant">Matematika Wajib</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 bg-[#F59E0B]/10 text-[#F59E0B] px-2 py-1 rounded text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span> Pending
+                                    </span>
+</td>
+<td class="py-3 px-4 flex justify-end gap-2">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded transition-colors" title="View">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+<button class="p-1.5 text-[#22C55E] hover:bg-[#22C55E]/10 rounded transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</button>
+<button class="p-1.5 text-error hover:bg-error-container/50 rounded transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/50 hover:bg-surface-bright transition-colors">
+<td class="py-3 px-4 text-on-background">24 Okt, 09:30</td>
+<td class="py-3 px-4 text-on-background font-medium">Siti Aminah, M.Pd</td>
+<td class="py-3 px-4 text-on-surface-variant">XI IPS 2</td>
+<td class="py-3 px-4 text-on-surface-variant">Sejarah Indonesia</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 bg-[#F59E0B]/10 text-[#F59E0B] px-2 py-1 rounded text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span> Pending
+                                    </span>
+</td>
+<td class="py-3 px-4 flex justify-end gap-2">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded transition-colors" title="View">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+<button class="p-1.5 text-[#22C55E] hover:bg-[#22C55E]/10 rounded transition-colors" title="Approve">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</button>
+<button class="p-1.5 text-error hover:bg-error-container/50 rounded transition-colors" title="Reject">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body><script src="../app.js"></script></html>
